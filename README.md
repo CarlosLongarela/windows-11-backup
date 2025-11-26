@@ -81,8 +81,9 @@ Para reinstalar automáticamente los programas que fueron gestionados por WinGet
 ```powershell
 winget import -i "Ruta\A\winget_installed.json" --accept-package-agreements --accept-source-agreements
 ```
+Podemos modificar el archivo `winget_installed.json` para quitar programas que no queramos reinstalar.
 
-También puede instalar programas individualmente o en grupo si no desea restaurar todo el listado.
+También podemos instalar programas individualmente o en grupo si no desea restaurar todo el listado.
 
 **Instalar un solo programa (ej. VS Code):**
 ```powershell
@@ -96,7 +97,7 @@ winget install Microsoft.VisualStudioCode 7zip.7zip Git.Git
 
 ### 2. Otros Programas
 
-Revise el archivo `installed_apps.txt` y `store_apps.txt` para identificar qué otro software necesita instalar manualmente o descargar desde la Microsoft Store.
+Revisar el archivo `installed_apps.txt` y `store_apps.txt` para identificar qué otro software necesita instalar manualmente o descargar desde la Microsoft Store.
 
 ### 3. Visual Studio Code
 
