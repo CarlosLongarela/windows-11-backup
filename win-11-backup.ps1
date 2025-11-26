@@ -9,6 +9,23 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     exit
 }
 
+# Comprobar si existe la carpeta base de backup
+if (-not (Test-Path -Path $backupPath)) {
+    $response = Read-Host "¿La carpeta de backup '$backupPath' no existe. ¿Desea crearla? (S/N)"
+    if ($response -eq 'S') {
+        New-Item -ItemType Directory -Force -Path $backupPath | Out-Null
+        Write-Output "Carpeta creada: $backupPath"
+    }
+    elseif ($response -eq 'N') {
+        Write-Warning "Operación cancelada por el usuario."
+        exit
+    }
+    else {
+        Write-Warning "Respuesta no válida. Operación cancelada."
+        exit
+    }
+}
+
 $date = Get-Date -Format "yyyy-MM-dd_HH-mm"
 $backupPathDate = "$backupPath\$date"
 New-Item -ItemType Directory -Force -Path $backupPathDate | Out-Null

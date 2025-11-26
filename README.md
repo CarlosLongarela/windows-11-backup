@@ -38,6 +38,8 @@ El script realiza las siguientes acciones de forma secuencial:
 
 Por defecto, la copia de seguridad se guardará en `D:\BackupWindows11\[FECHA_HORA]`.
 
+> **Nota**: Si la carpeta base de destino no existe, el script le preguntará si desea crearla. Deberá confirmar con `S` para continuar o `N` para cancelar.
+
 ## Parámetros
 
 El script acepta un parámetro opcional para definir la ruta de destino.
@@ -52,7 +54,7 @@ Define el directorio raíz donde se almacenarán las copias de seguridad.
 **Ejemplo de uso con ruta personalizada**:
 
 ```powershell
-.\win-11-backup.ps1 -backupPath "C:\MisBackups"
+.\win-11-backup.ps1 -backupPath "P:\BackupWindows11"
 ```
 
 ## Estructura de la Copia de Seguridad
