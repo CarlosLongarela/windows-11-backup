@@ -1,5 +1,5 @@
 param (
-    [string]$backupPath = "D:\BackupWindows11"
+    [string]$backupPath = "P:\BackupWindows11"
 )
 
 # Comprobar permisos de Administrador
